@@ -21,6 +21,8 @@ obj/
 .angular/
 **/.angular/cache/
 .nx/
+node_modules/
+**/node_modules/
 
 # Visual Studio Code
 .vscode/
