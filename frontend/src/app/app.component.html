@@ -1,0 +1,25 @@
+<div class="min-h-screen bg-gray-100 flex flex-col">
+  <nav class="bg-white shadow-md p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">{{title}}</h1>
+    </div>
+  </nav>
+  
+  <!-- Overlay that closes the panel when clicked outside -->
+  <div *ngIf="showSidePanel" 
+       class="fixed inset-0 z-10"
+       (click)="toggleSidePanel()"></div>
+  
+  <main class="flex-1 flex justify-center overflow-hidden">
+    <div class="flex-1 overflow-auto p-6 transition-all duration-300 ease-in-out" [class.mr-96]="showSidePanel">
+      <router-outlet></router-outlet>
+    </div>
+    
+    <div class="w-96 bg-white transform transition-transform duration-300 ease-in-out overflow-auto fixed top-[64px] right-0 bottom-0 z-20"
+         [class.translate-x-0]="showSidePanel"
+         [class.translate-x-full]="!showSidePanel">
+      <app-todo-form *ngIf="showSidePanel && !isEditMode"></app-todo-form>
+      <app-edit-todo *ngIf="showSidePanel && isEditMode" [todo]="selectedTodo"></app-edit-todo>
+    </div>
+  </main>
+</div>

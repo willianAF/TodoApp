@@ -1,0 +1,50 @@
+<div class="py-12 px-4 sm:px-6 lg:px-8 flex items-start justify-center">
+  <div class="w-full max-w-md">
+    <mat-card class="bg-white shadow-none rounded-none overflow-hidden">
+      <div class="px-6 py-5">
+        <h2 class="text-xl font-semibold text-gray-900">Add New Todo</h2>
+      </div>
+      <mat-card-content class="p-6">
+        <form (ngSubmit)="onSubmit()" #todoForm="ngForm" class="space-y-6">
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Title</mat-label>
+              <input 
+                matInput 
+                [(ngModel)]="todo.title" 
+                name="title" 
+                required 
+                class="text-base" 
+                placeholder="What needs to be done?"
+              >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Description</mat-label>
+              <textarea 
+                matInput 
+                [(ngModel)]="todo.description" 
+                name="description" 
+                class="text-base" 
+                placeholder="Add details about this task"
+                rows="4"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div>
+            <button 
+              mat-flat-button 
+              color="primary" 
+              type="submit" 
+              [disabled]="!todoForm.form.valid"
+              class="w-full py-2.5 text-base font-medium rounded-lg transition-all duration-200 hover:opacity-90"
+            >
+              Create Task
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
