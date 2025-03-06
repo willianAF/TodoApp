@@ -1,4 +1,4 @@
-# Todo List Monorepo
+# Todo List
 
 This is a monorepo containing a full-stack Todo List application with Angular frontend and ASP.NET backend.
 
