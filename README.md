@@ -54,6 +54,7 @@ This is a monorepo containing a full-stack Todo List application with Angular fr
    ```bash
    cd backend
    dotnet restore
+   dotnet tool install --global dotnet-ef
    dotnet ef database update
    ```
 
